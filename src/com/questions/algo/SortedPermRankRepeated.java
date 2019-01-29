@@ -52,11 +52,6 @@ public class SortedPermRankRepeated
                 if (h.get(e.getKey()) == 0)
                     continue;
 
-                //if the character 'ch' is smaller than current character 'c' in string
-                //then decrease the freq of the smaller character 'ch' by 1
-                //and calculate the total permutations possible with 'ch' as the first character
-                // by iterating through the collection 'characters' again but with frequency
-                // of 'ch' - 1 which gives total permutations possible with 'ch' as the first character
                 if (e.getKey() < c) {
                     //decreasing freq so to make 'ch' as the first character
                     h.put(e.getKey(), h.get(e.getKey()) - 1);
