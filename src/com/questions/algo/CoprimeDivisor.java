@@ -19,14 +19,14 @@ public class CoprimeDivisor
     }
     public int cpFact(int A, int B)
     {
-        int gcd, i = A;
-        while(i >= 1)
+        int gcd;
+        while(A >= 1)
         {
-            gcd = gcd(i,B);
-            if((gcd(i,B) != 1))
-                i = i / gcd;
+            gcd = gcd(A,B);
+            if(gcd != 1)
+                A = A / gcd;
             else
-                return i;
+                return A;
         }
         return 0;
     }
