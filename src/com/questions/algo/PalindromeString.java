@@ -7,7 +7,6 @@ public class PalindromeString
         int i = 0, j = s.length() - 1;
         char c1, c2;
         s = s.toLowerCase();
-        System.out.println(s);
         while (i < j)
         {
             c1 = s.charAt(i);
