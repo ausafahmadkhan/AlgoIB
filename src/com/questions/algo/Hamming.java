@@ -1,4 +1,4 @@
-package com.Algo;
+package com.questions.algo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,7 +65,7 @@ public class Hamming
 	public static void main(String args[])
 	{
 		Hamming h = new Hamming();
-		List<Integer> ar = Arrays.asList(2, 4, 6);
+		List<Integer> ar = Arrays.asList(2, 2, 2);
 		System.out.println(h.hammingDistance(ar));
 	}
 }
