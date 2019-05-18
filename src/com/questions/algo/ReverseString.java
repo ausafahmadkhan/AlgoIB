@@ -30,6 +30,6 @@ public class ReverseString
     public static void main(String args[])
     {
         ReverseString reverseString = new ReverseString();
-        System.out.println(reverseString.reverseWords("paua nsokbjpsj neo njihbb suugrmh a wjjaynx tlr kgkb fhlx wwd dukt ppgtfrotf rnfjya opq hk"));
+        System.out.println(reverseString.reverseWords("hi hello how are you"));
     }
 }
