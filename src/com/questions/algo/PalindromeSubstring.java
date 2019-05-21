@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class PalindromeSubstring
 {
+    //Function to check if a string is a palindrome.
     public boolean isPalindrome(String s)
     {
         int i = 0, j = s.length() - 1;
@@ -24,6 +25,8 @@ public class PalindromeSubstring
         }
         return true;
     }
+    //Function returns the last index of occurrence
+    //of char 'ch' within a given range.
     public int getLastIndex(char ch, String s, int from, int to)
     {
         for (int i = to; i >= from; i--)
@@ -41,10 +44,15 @@ public class PalindromeSubstring
         {
             ch = s.charAt(i);
             index = getLastIndex(ch, s, i, index);
+
+            //Get the last index of occurrence of the current character 'ch'
+            //and check if this substring is a palindrome.
             while (index != -1)
             {
-                if (index == i)
+                if (index == i) {
                     count++;
+                    break;
+                }
                 else
                 {
                     if (isPalindrome(s.substring(i, index + 1)))

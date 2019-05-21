@@ -7,10 +7,15 @@ import java.text.DecimalFormat;
 
 public class OfficeParty
 {
+    //A helper function to check if it is possible to cut slices of area 'ar'
+    //from cakes such that every guest gets a piece.
     public boolean isPossible(double[] area, double ar, int guests)
     {
         double current = area[0];
         int n = guests, i = 0;
+
+        //Cut slices from the current cake, area[i] and decrease the slice area
+        //from current. If it is not possible to cut anymore slice, move on to the next cake.
         while (n > 0)
         {
             current = current - ar;
@@ -37,6 +42,10 @@ public class OfficeParty
             high = high < area[i] ? area[i] : high;
         }
         double low = 0.0, middle;
+
+        //Taking area of the largest cake as the upper limit and zero as the lower limit
+        //do a binary search of the area for which it is possible to feed the guests.
+        //Maximise this area.
         while (low < high)
         {
             middle = (low + high) / 2.0;
