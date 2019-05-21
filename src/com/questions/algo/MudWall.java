@@ -53,23 +53,28 @@ public class MudWall
 
         return maxheight;
     }
+
     public static void main(String args[])throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the number of elements in stickPositions");
         int n = Integer.parseInt(br.readLine());
         int stickPostions[] = new int[n];
+
         for (int i = 0; i < n; i++)
         {
             stickPostions[i] = Integer.parseInt(br.readLine());
         }
+
         System.out.println("Enter the number of elements in stickHeights");
         n = Integer.parseInt(br.readLine());
         int stickHeights[] = new int[n];
+
         for (int i = 0; i < n; i++)
         {
             stickHeights[i] = Integer.parseInt(br.readLine());
         }
+
         MudWall mudWall = new MudWall();
         System.out.println(mudWall.maxHeight(stickPostions, stickHeights));
     }

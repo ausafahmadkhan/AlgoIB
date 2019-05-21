@@ -28,6 +28,7 @@ public class OfficeParty
 
                 if (i == area.length)
                     return false;
+
                 current = area[i];
             }
             else
@@ -37,6 +38,7 @@ public class OfficeParty
 
         return true;
     }
+
     public String largestPiece(int[] radii, int guests)
     {
         double high = 0.0;
@@ -56,6 +58,7 @@ public class OfficeParty
         while (low < high)
         {
             middle = (low + high) / 2.0;
+
             if (isPossible(area, middle, guests))
             {
                 low = middle;
@@ -69,16 +72,19 @@ public class OfficeParty
         DecimalFormat df = new DecimalFormat("#.####");
         return df.format(high);
     }
+
     public static void main(String args[])throws IOException
     {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the number of elements in radii");
         int n = Integer.parseInt(bufferedReader.readLine());
         int[] radii = new int[n];
+
         for (int i = 0; i < n; i++)
         {
             radii[i] = Integer.parseInt(bufferedReader.readLine());
         }
+
         System.out.println("Enter the number of guests");
         int guests = Integer.parseInt(bufferedReader.readLine());
         OfficeParty officeParty = new OfficeParty();
