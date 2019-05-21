@@ -7,9 +7,11 @@ import java.text.DecimalFormat;
 
 public class OfficeParty
 {
+    private static final double pi = 3.14159265359;
+
     //A helper function to check if it is possible to cut slices of area 'ar'
     //from cakes such that every guest gets a piece.
-    public boolean isPossible(double[] area, double ar, int guests)
+    private boolean isPossible(double[] area, double ar, int guests)
     {
         double current = area[0];
         int n = guests, i = 0;
@@ -19,9 +21,11 @@ public class OfficeParty
         while (n > 0)
         {
             current = current - ar;
+
             if (current < 0)
             {
                 i++;
+
                 if (i == area.length)
                     return false;
                 current = area[i];
@@ -30,17 +34,20 @@ public class OfficeParty
                 n--;
 
         }
+
         return true;
     }
     public String largestPiece(int[] radii, int guests)
     {
         double high = 0.0;
         double area[] = new double[radii.length];
+
         for (int i = 0; i < radii.length; i++)
         {
-            area[i] = 3.14159265359 * radii[i] * radii[i];
+            area[i] = pi * radii[i] * radii[i];
             high = high < area[i] ? area[i] : high;
         }
+
         double low = 0.0, middle;
 
         //Taking area of the largest cake as the upper limit and zero as the lower limit
@@ -58,6 +65,7 @@ public class OfficeParty
                 high = middle - 0.0001;
             }
         }
+
         DecimalFormat df = new DecimalFormat("#.####");
         return df.format(high);
     }

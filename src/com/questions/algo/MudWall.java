@@ -1,6 +1,5 @@
 package com.questions.algo;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -46,10 +45,12 @@ public class MudWall
                     ar[left + 1] = currentheight;
                     left++;
                 }
+
                 j++;
                 maxheight = maxheight < currentheight ? currentheight : maxheight;
             }
         }
+
         return maxheight;
     }
     public static void main(String args[])throws IOException

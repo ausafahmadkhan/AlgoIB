@@ -7,10 +7,11 @@ import java.io.InputStreamReader;
 public class PalindromeSubstring
 {
     //Function to check if a string is a palindrome.
-    public boolean isPalindrome(String s)
+    private boolean isPalindrome(String s)
     {
         int i = 0, j = s.length() - 1;
         char c1, c2;
+
         while (i < j)
         {
             c1 = s.charAt(i);
@@ -23,19 +24,23 @@ public class PalindromeSubstring
                 j--;
             }
         }
+
         return true;
     }
+
     //Function returns the last index of occurrence
     //of char 'ch' within a given range.
-    public int getLastIndex(char ch, String s, int from, int to)
+    private int getLastIndex(char ch, String s, int from, int to)
     {
         for (int i = to; i >= from; i--)
         {
             if (s.charAt(i) == ch)
                 return i;
         }
+
         return -1;
     }
+
     public int countPalindromes(String s)
     {
         int i = 0, index = s.length() - 1, count = 0, l = s.length();
@@ -58,11 +63,14 @@ public class PalindromeSubstring
                     if (isPalindrome(s.substring(i, index + 1)))
                         count++;
                 }
+
                 index = getLastIndex(ch, s, i, index - 1);
             }
+
             i++;
             index = s.length() - 1;
         }
+
         return count;
     }
     public static void main(String args[])throws IOException
