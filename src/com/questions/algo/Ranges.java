@@ -11,7 +11,6 @@ public class Ranges
 {
 
     private static Set<Long> set;
-    private static Long sum;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter wr = new PrintWriter(System.out);
@@ -22,7 +21,6 @@ public class Ranges
         set = new HashSet();
         while(M > 0){
             long X = Long.parseLong(br.readLine().trim());
-            sum = 0L;
             long out_ = getOutput(N, X);
             System.out.println(out_);
             M--;
@@ -33,7 +31,8 @@ public class Ranges
     static long getOutput(long N, long M){
         // Write your code here
         set.add(M);
-        long i = 1, leftindex = 1, rightindex = 1, temp = 1;
+        long sum = 0L;
+        long i = 1, leftindex = 1, rightindex, temp = 1;
         boolean crossed = false;
         while(i <= N)
         {
